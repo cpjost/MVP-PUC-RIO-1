@@ -88,7 +88,7 @@ Delta → Silver e Gold
 **Arquitetura do Pipeline:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**Camada Bronze - Ingestão **
+**Camada Bronze - Ingestão**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Campo      | Tipo   | Descrição              |
 | ---------- | ------ | ---------------------- |
@@ -104,7 +104,7 @@ Delta → Silver e Gold
 | timeframe  | string | 5m, 15m, 60m           |
 
 
-**Camada Silver - Trasformação **
+**Camada Silver - Trasformação**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 Transformações aplicadas:
 
@@ -124,79 +124,98 @@ Transformações aplicadas:
 
 
 
-**Camada Gold:**
+**Camada Gold - Análises e Features**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+Indicadores derivados:
 
-Volatilidade média por hora, timeframe e semana
+**Volatilidade**
 
-Probabilidade de retorno positivo
+1. Range_medio_por_hora
 
-Análises estatísticas
+2. Range_medio_por_timeframe
 
-Tabelas agregadas para dashboards
+3. Range_medio_por_dia_semana
 
-**Dashboards Criados:**
+**Retorno**
+
+1. Prob_retorno_positivo
+
+2. Retorno_medio_por_hora
+
+3. Retorno_medio_por_timeframe
+
+**Regimes de Mercado**
+
+K-Means aplicado sobre:
+
+1. Range
+
+2. Volume
+
+3. Volatilidade média
+
+Regimes resultantes:
+
+**Cluster 0 – Baixa volatilidade**
+
+**Cluster 1 – Média volatilidade**
+
+**Cluster 2 – Alta volatilidade**
+
+**Catálogo de Dados – Tabela Silver**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+| Coluna     | Tipo      | Descrição                  |
+| ---------- | --------- | -------------------------- |
+| timestamp  | timestamp | Momento do candle          |
+| abertura   | double    | Preço de abertura          |
+| maximo     | double    | Preço máximo               |
+| minimo     | double    | Preço mínimo               |
+| fechamento | double    | Preço de fechamento        |
+| range      | double    | Volatilidade do candle     |
+| retorno    | double    | Variação percentual        |
+| volume     | double    | Volume financeiro          |
+| quantidade | double    | Numero de negocios         |
+| timeframe  | string    | 5m, 15m, 60m               |
+| hora       | int       | Hora extraída do timestamp |
+| dia_semana | int       | Dia da semana (1–7)        |
 
+**Dashboards**
+---------------------------------------------------------------------------------------------------------------------------------------------
 **Dashboard 1 — Volatilidade Intraday**
----------------------------------------------------------------------------------------------------------------------------------------------
 
-Range médio por hora
+1. Range médio por hora
 
-Range médio por timeframe
+2. Range por timeframe
 
-Range por dia da semana
+3. Range por dia da semana
 
-Heatmap hora × timeframe
+4. Heatmap: hora × timeframe
 
 **Dashboard 2 — Tendência e Retorno**
----------------------------------------------------------------------------------------------------------------------------------------------
 
-Probabilidade de retorno positivo por hora
+1. Probabilidade de retorno positivo
 
-Histograma dos retornos
+2. Distribuição dos retornos
 
-Retorno médio por timeframe
+3. Retorno médio por timeframe
 
-Boxplot por categoria de volatilidade
+4. Tendência horária
 
 **Dashboard 3 — Regimes de Mercado**
+
+1. Frequência por cluster
+
+2. Range médio por cluster
+
+3. Retorno médio por cluster
+
+4. Heatmap cluster × hora
+
+**Conclusões**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-
-Frequência por cluster
-
-Range médio por cluster
-
-Probabilidade de retorno positivo por regime
-
-Heatmap cluster × hora
-
-Tecnologias Utilizadas
-
-Databricks Community Edition
-
-Apache Spark / PySpark
-
-Delta Lake
-
-Spark MLlib
-
-Python 3.10
-
-Databricks Dashboards
-
-**Conclusões Principais**
----------------------------------------------------------------------------------------------------------------------------------------------
-
-O WINFUT apresenta padrões claros de volatilidade intraday.
-
-A probabilidade de retorno positivo varia significativamente por horário.
-
-Clusters de alta volatilidade não garantem maiores retornos.
-
-O pipeline permite análises repetíveis e escaláveis.
-
-
-
-
+**O mercado WINFUT possui padrões intraday bem definidos.
+Período da manhã concentra maior volatilidade.
+Distribuição dos retornos apresenta caudas longas.
+K-Means revelou três regimes claros de volatilidade.
+Probabilidade de retorno positivo não é uniforme ao longo do dia.**
 
