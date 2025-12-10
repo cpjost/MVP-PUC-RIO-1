@@ -6,7 +6,17 @@
 
 Este projeto é um MVP (Minimum Viable Product) desenvolvido como requisito para a pós-graduação em Ciência de Dados da PUC-Rio (Módulo: Engenharia de Dados).
 
-O objetivo é construir um pipeline de dados completo (Coleta, Preparação, Modelagem, Carga e Análise) em ambiente Cloud utilizando Databricks + Delta Lake para analisar padrões intraday do contrato futuro do índice Ibovespa (WINFUT), incluindo volatilidade, retorno, regimes de mercado (K-Means) e indicadores quantitativos.
+O objetivo é construir um pipeline de dados completo (Coleta → Preparação → Modelagem → Carga → Análise) utilizando Databricks + PySpark + Delta Lake para analisar padrões intraday do contrato futuro do índice Ibovespa (WINFUT), incluindo:
+
+1. Volatilidade intraday
+
+2. Distribuição de retornos
+
+3. Probabilidade de retorno positivo por hora
+
+4. Regimes de volatilidade (K-Means)
+
+5. Padrões por timeframe e dia da semana
 
 
 **Objetivo do Projeto:**
@@ -15,117 +25,104 @@ O objetivo é construir um pipeline de dados completo (Coleta, Preparação, Mod
 **O Problema:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-O mercado intraday é altamente volátil e não linear. Traders e analistas, ao observarem apenas gráficos tradicionais, não conseguem mensurar padrões estatísticos importantes, como:
+O mercado intraday é altamente volátil, não linear, e sensível a microvariações.
+Traders que observam apenas gráficos tradicionais (candlestick, renko, tape reading) não conseguem medir:
 
-horários de maior volatilidade
+1. Horários de maior volatilidade
 
-distribuição de retornos intraday
+2. Períodos com maior probabilidade de retorno positivo
 
-probabilidade de retorno positivo por faixa horária
+3. Distribuição estatística dos retornos
 
-mudanças de regime de volatilidade
+4. Regimes de volatilidade intraday
 
-comportamento por timeframe e dia da semana
+5. Comportamento por timeframe (5m, 15m, 60m)
 
-O problema central que este projeto resolve é a falta de uma visão estruturada e estatística do mercado intraday, substituindo percepções subjetivas por dados concretos.
+6. Padrões semanais
+
+O MVP resolve o problema de falta de visão estruturada e estatística, substituindo percepções subjetivas por informações quantitativas.
 
 **Perguntas de Negócio:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+Perguntas de Negócio (Business Questions)
 
-O MVP responde às seguintes questões principais:
+O projeto busca responder:
 
-Volatilidade Intraday
-Quais são os horários, dias da semana e timeframes com maior volatilidade média?
+**Tendência Intraday:**
+Quais horários apresentam maior volatilidade média?
 
-Retorno e Tendência
-Qual é a probabilidade de um candle fechar positivo por hora, timeframe e período do pregão?
+**Eficiência do Mercado:**
+Qual a probabilidade de um candle fechar positivo ao longo do pregão?
 
-Distribuição Estatística
-Como se comporta a distribuição dos retornos intraday? É simétrica? Possui caudas longas?
+**Distribuição Estatística:**
+Como os retornos intraday se distribuem? São simétricos? Possuem caudas longas?
 
-Regimes de Mercado (K-Means)
-Existem regimes distintos de volatilidade? Como influenciam no retorno?
+**Regimes de Volatilidade:**
+O WINFUT se comporta de forma diferente em ambientes de baixa, média e alta volatilidade?
 
-Padrões Intraday
-Existem janelas de maior eficiência considerando volatilidade × retorno?
+**Padrões por Timeframe e Semana:**
+Existem diferenças significativas entre 5m, 15m e 60m?
+Os dias da semana influenciam no range médio?
 
 **Dados:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-Fonte: Arquivos CSV do WINFUT em múltiplos timeframes, exportado pelo programa profitchart da nelogica.
-Formato: CSV
-Timeframes: 5m, 15m, 60m
+**Fonte**
 
-Campos Originais:
+Arquivos históricos de WINFUT provenientes de plataformas de mercado (profitchart pro)contendo:
 
-ativo
+**Preço de abertura, máximo, mínimo e fechamento**
 
-data
+**Volume**
 
-hora
+**Quantidade**
 
-abertura
+**Timestamp**
 
-máximo
+**Formato**
+---------------------------------------------------------------------------------------------------------------------------------------------
 
-mínimo
-
-fechamento
-
-volume
-
-quantidade
-
-Campos Criados (Silver / Gold)
-
-timestamp
-
-range (máximo − mínimo)
-
-retorno
-
-categoria_hora (manhã, almoço, tarde)
-
-vol_categoria (baixa, média, alta – via K-Means)
+CSV → Bronze
+Delta → Silver e Gold
 
 **Arquitetura do Pipeline:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**Camada Bronze:**
+**Camada Bronze - Ingestão **
 ---------------------------------------------------------------------------------------------------------------------------------------------
+| Campo      | Tipo   | Descrição              |
+| ---------- | ------ | ---------------------- |
+| ativo      | string | WINFUT                 |
+| data       | string | Data do pregão         |
+| hora       | string | Horário do candle      |
+| abertura   | string | Preço de abertura      |
+| maximo     | string | Preço máximo           |
+| minimo     | string | Preço mínimo           |
+| fechamento | string | Preço de fechamento    |
+| volume     | string | Volume negociado       |
+| quantidade | string | Quantidade de negócios |
+| timeframe  | string | 5m, 15m, 60m           |
 
-Leitura dos CSVs brutos
 
-Padronização das colunas
-
-União dos timeframes
-
-**Camada Silver:**
+**Camada Silver - Trasformação **
 ---------------------------------------------------------------------------------------------------------------------------------------------
+Transformações aplicadas:
 
-Conversão de tipos
+1. Conversão numérica de preços
 
-Parse de vírgula/ponto
+2. Padronização de tipos
 
-Criação de:
+3. Criação de timestamp unificado
 
-range
+4. Criação de range = max - min
 
-retorno
+5. Criação de retorno = (fechamento - abertura) / abertura
 
-timestamp
+6. Criação de hora_num e dia_semana
 
-categoria_hora
+7. Limpeza e normalização
 
-Escrita da tabela Delta mpv.silver_fato_candle
 
-Silver + ML (Regimes)
-
-Clusterização K-Means (k=3)
-
-Identificação dos regimes de volatilidade
-
-Nova tabela criada: mpv.silver_fato_candle_regimes
 
 **Camada Gold:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
