@@ -1,227 +1,184 @@
-**WINFUT Intraday Quantitative Analysis — Historical Intraday Samples**
+**Análise Intraday do WINFUT com Pipeline Analítico e Clustering**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **Visão Geral**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-Este projeto consiste em um MVP (Minimum Viable Product) desenvolvido como requisito para a Pós-Graduação em Ciência de Dados da PUC-Rio, no módulo de Engenharia de Dados.
+Este repositório contém o MVP (Minimum Viable Product) desenvolvido no contexto acadêmico da PUC-Rio, com foco na aplicação prática de conceitos de engenharia de dados, analytics e machine learning para análise de dados intraday do contrato futuro de índice (WINFUT).
 
-O objetivo é construir um pipeline de dados completo — desde a ingestão até a análise — utilizando Databricks, PySpark e Delta Lake, com foco na análise quantitativa intraday do contrato futuro do índice Ibovespa (WINFUT).
-
-O projeto investiga padrões estatísticos e comportamentais do mercado intraday, incluindo:
-
-1. Volatilidade intraday
-
-2. Distribuição de retornos
-
-3. Probabilidade de retorno positivo por hora
-
-4. Regimes de volatilidade via K-Means
-
-5. Padrões por timeframe e dia da semana
+O projeto estrutura um pipeline de dados em nuvem, organiza as informações em camadas analíticas e aplica técnicas de clustering para identificar regimes de mercado, padrões de volatilidade e retorno ao longo do pregão.
 
 
-**Objetivo do Projeto**
+**Objetivo do MVP**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+O objetivo principal do MVP é:
 
-**O Problema**
----------------------------------------------------------------------------------------------------------------------------------------------
+Analisar dados intraday do WINFUT
 
-O mercado intraday é caracterizado por alta volatilidade, não linearidade e comportamento estocástico. Traders e analistas que utilizam apenas ferramentas gráficas tradicionais — como candlestick, Renko ou tape reading — enfrentam dificuldades para mensurar, de forma objetiva, padrões estatísticos relevantes, tais como:
+Identificar padrões de volatilidade e retorno ao longo do dia
 
-1. Horários de maior volatilidade
+Detectar regimes de mercado por meio de clustering de candles
 
-2. Probabilidade de retornos positivos ao longo do pregão
+Apoiar decisões analíticas e operacionais com base em dados
 
-3. Distribuição estatística dos retornos intraday
+O detalhamento completo do objetivo encontra-se em:
 
-4. Mudanças de regime de volatilidade
-
-5. Diferenças comportamentais entre timeframes (5m, 15m, 60m)
-
-6. Padrões semanais recorrentes
-
-Este MVP resolve a falta de uma visão estatística estruturada do mercado intraday, substituindo percepções subjetivas por evidências quantitativas baseadas em dados.
+objetivo_mvp.md
 
 **Perguntas de Negócio**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-O projeto busca responder às seguintes questões:
+O MVP busca responder às seguintes questões:
 
-**Tendência Intraday**
-Quais horários apresentam maior volatilidade média ao longo do pregão?
+Quais horários do dia apresentam maior volatilidade média?
 
-**Eficiência do Mercado**
-Qual a probabilidade de um candle intraday fechar positivo?
+Existe diferença significativa de retorno médio entre faixas de horário?
 
-**Distribuição Estatística**
-Como os retornos intraday se distribuem?
-Eles apresentam simetria ou caudas longas (fat tails)?
+É possível identificar clusters de candles com comportamentos semelhantes?
 
-**Regimes de Volatilidade**
-O WINFUT se comporta de forma diferente em ambientes de baixa, média e alta volatilidade?
+Esses clusters representam regimes distintos de risco e retorno?
 
-**Padrões por Timeframe e Semana:**
-Existem diferenças significativas entre 5m, 15m e 60m?
-Os dias da semana influenciam no range médio?
+Como esses padrões podem apoiar decisões estratégicas e operacionais
 
-**Dados**
+**Arquitetura da Solução**
+---------------------------------------------------------------------------------------------------------------------------------------------
+A solução foi estruturada seguindo o padrão Medallion Architecture, com as camadas:
+
+Bronze – Ingestão de dados brutos
+
+Silver – Dados tratados, enriquecidos e modelados
+
+Gold – Agregações analíticas e consumo
+
+Diagramas detalhados da arquitetura e pipelines podem ser encontrados na pasta:
+
+assets/
+
+**Camadas do Pipeline**
+---------------------------------------------------------------------------------------------------------------------------------------------
+ Camada Bronze (mvp_bronze)
+
+Ingestão de dados via arquivos CSV históricos
+
+Padronização inicial de tipos e timestamps
+
+Persistência em formato analítico (Delta)
+
+ Camada Silver
+
+Construção de candles OHLCV
+
+Cálculo de métricas como retorno e range
+
+Criação de features analíticas
+
+Categorização por faixa de horário
+
+Aplicação de clustering (KMeans)
+
+ Camada Gold
+
+Agregações por horário, dia e regime
+
+Base analítica para dashboards
+
+Suporte à análise exploratória e estratégica
+
+**Catálogo de Dados**
+A descrição detalhada das tabelas, colunas e tipos de dados está documentada em:
+
+ catalogo_dados.md
+ 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**Fonte**
+**Qualidade dos Dados**
+Foram realizadas verificações de qualidade incluindo:
 
-Arquivos históricos de WINFUT provenientes de plataformas de mercado (profitchart pro)contendo:
+Checagem de valores nulos
 
-**Preço de abertura, máximo, mínimo e fechamento**
+Remoção de duplicidades
 
-**Volume negociado**
+Validação de faixas lógicas de preços
 
-**Quantidade de negócios**
+Análise e tratamento de outliers
 
-**Timestamp do candle**
+Os detalhes encontram-se em:
 
-**Formato**
+ analise_qualidade_dados.md
+ 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-CSV → Camada Bronze
-Delta Lake → Silver e Gold
+**Análise dos Resultados**
+As análises realizadas permitiram:
 
-**Arquitetura do Pipeline**
+Identificar horários com maior volatilidade intraday
+
+Avaliar diferenças de retorno médio ao longo do dia
+
+Detectar clusters de candles representando diferentes regimes de mercado
+
+Os resultados e interpretações estão descritos em:
+
+ analise_resultados.md
+
+ identificação_de_clusters_de_candles.md
+ 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**Camada Bronze - Ingestão**
+**Modelagem Analítica**
+Técnica utilizada: KMeans
+
+Variáveis baseadas em retorno e volatilidade
+
+Abordagem exploratória, focada em segmentação de comportamento
+
+Sem objetivo preditivo operacional neste MVP
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Dados brutos ingeridos diretamente dos arquivos CSV, sem tratamento analítico.
-| Campo      | Tipo   | Descrição              |
-| ---------- | ------ | ---------------------- |
-| ativo      | string | WINFUT                 |
-| data       | string | Data do pregão         |
-| hora       | string | Horário do candle      |
-| abertura   | string | Preço de abertura      |
-| maximo     | string | Preço máximo           |
-| minimo     | string | Preço mínimo           |
-| fechamento | string | Preço de fechamento    |
-| volume     | string | Volume negociado       |
-| quantidade | string | Quantidade de negócios |
-| timeframe  | string | 5m, 15m, 60m           |
 
+**Limitações**
 
-**Camada Silver - Trasformação**
+Uso de um único ativo (WINFUT)
+
+Análise baseada em dados históricos
+
+Modelo exploratório sem otimização extensiva
+
+Ausência de backtesting de estratégias
+
+Essas limitações são compatíveis com o escopo de um MVP acadêmico.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Aplicação de limpeza, padronização e criação de features básicas:
 
-1. Conversão numérica de preços e volumes.
+**Próximos Passos**
 
-2. Padronização de tipos de dados
+Como evoluções futuras, o projeto pode incorporar:
 
-3. Criação de timestamp unificado
+Dados em tempo real
 
-4. Cálculo de range = maximo − minimo
+Múltiplos ativos e timeframes
 
-5. Cálculo de retorno = (fechamento − abertura) / abertura
+Modelos de machine learning mais avançados
 
-6. Extração de hora e dia_semana
+Integração com estratégias quantitativas
 
-7. Tratamento de valores inconsistentes
+Dashboards interativos em produção
 
-
-
-**Camada Gold - Análises e Features**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Camada analítica com agregações e métricas derivadas.
 
-**Volatilidade**
+**Considerações Finais**
 
-1. Range médio por hora
+Este MVP demonstra a aplicação prática de conceitos de dados e analytics
+na análise de mercados financeiros, servindo como base tanto acadêmica
+quanto para evolução em projetos profissionais e quantitativos.
 
-2. Range médio por timeframe
-
-3. Range médio por dia da semana
-
-**Retorno**
-
-1. Probabilidade de retorno positivo
-
-2. Retorno médio por hora
-
-3. Retorno médio por timeframe
-
-**Regimes de Mercado**
-
-K-Means aplicado sobre:
-
-1. Range
-
-2. Volume
-
-3. Volatilidade média
-
-Regimes identificados:
-
-**Cluster 0 – Baixa volatilidade**
-
-**Cluster 1 – Média volatilidade**
-
-**Cluster 2 – Alta volatilidade**
-
-**Catálogo de Dados – Tabela Silver**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Coluna     | Tipo      | Descrição                  |
-| ---------- | --------- | -------------------------- |
-| timestamp  | timestamp | Momento do candle          |
-| abertura   | double    | Preço de abertura          |
-| maximo     | double    | Preço máximo               |
-| minimo     | double    | Preço mínimo               |
-| fechamento | double    | Preço de fechamento        |
-| range      | double    | Volatilidade do candle     |
-| retorno    | double    | Variação percentual        |
-| volume     | double    | Volume financeiro          |
-| quantidade | double    | Numero de negocios         |
-| timeframe  | string    | 5m, 15m, 60m               |
-| hora       | int       | Hora extraída do timestamp |
-| dia_semana | int       | Dia da semana (1–7)        |
+**Autor**
 
-**Dashboards**
+Carlos Peter Jost
+Projeto acadêmico – PUC-Rio
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
-**Dashboard 1 — Volatilidade Intraday**
-
-1. Range médio por hora
-
-2. Range por timeframe
-
-3. Range por dia da semana
-
-4. Heatmap: hora × timeframe
-
-**Dashboard 2 — Tendência e Retorno**
-
-1. Probabilidade de retorno positivo
-
-2. Distribuição dos retornos
-
-3. Retorno médio por timeframe
-
-4. Tendência horária
-
-**Dashboard 3 — Regimes de Mercado**
-
-1. Frequência por cluster
-
-2. Range médio por cluster
-
-3. Retorno médio por cluster
-
-4. Heatmap cluster × hora
-
-**Conclusões**
----------------------------------------------------------------------------------------------------------------------------------------------
-**O mercado WINFUT possui padrões intraday bem definidos.
-Período da manhã concentra maior volatilidade.
-A distribuição dos retornos apresenta caudas longas, indicando risco assimétrico.
-O algoritmo K-Means identificou três regimes claros de volatilidade.
-A probabilidade de retorno positivo não é uniforme ao longo do pregão.**
-
-
 ## Licença
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
