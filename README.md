@@ -127,9 +127,7 @@ Detectar clusters de candles representando diferentes regimes de mercado
 
 Os resultados e interpretações estão descritos em:
 
- analise_resultados.md
-
- identificação_de_clusters_de_candles.md
+https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_resultados.md
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
