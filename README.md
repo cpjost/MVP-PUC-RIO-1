@@ -39,7 +39,7 @@ Apoiar decisões analíticas e operacionais com base em dados
 
 O detalhamento completo do objetivo encontra-se em:
 
-[objetivo_mvp.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/objetivo_mvp.md)
+[- objetivo_mvp.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/objetivo_mvp.md)
 
 **Perguntas de Negócio**
 ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ Gold – Agregações analíticas e consumo
 
 Diagramas detalhados da arquitetura e pipelines podem ser encontrados na pasta:
 
-[assets/](https://github.com/cpjost/MVP-PUC-RIO-1/tree/main/assets)
+[- assets/](https://github.com/cpjost/MVP-PUC-RIO-1/tree/main/assets)
 
 **Camadas do Pipeline**
 ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ Suporte à análise exploratória e estratégica
 
 A descrição detalhada das tabelas, colunas e tipos de dados está documentada em:
 
-[ catalogo_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/catalogo_dados.md)
+[- catalogo_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/catalogo_dados.md)
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ Análise e tratamento de outliers
 
 Os detalhes encontram-se em:
 
-[ analise_qualidade_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_qualidade_dados.md)
+[- analise_qualidade_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_qualidade_dados.md)
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ Detectar clusters de candles representando diferentes regimes de mercado
 
 Os resultados e interpretações estão descritos em:
 
-[ analise_resultados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_resultados.md)
+[-analise_resultados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_resultados.md)
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -158,13 +158,17 @@ Abordagem exploratória, focada em segmentação de comportamento
 
 Sem objetivo preditivo operacional neste MVP
 
-**Dashboards Analíticos**
+---------------------------------------------------------------------------------------------------------------------------------------------
 
+
+**Dashboards Analíticos**
+---------------------------------------------------------------------------------------------------------------------------------------------
 Como parte do MVP, foram desenvolvidos dashboards analíticos com o objetivo de visualizar, explorar e interpretar os resultados gerados ao longo do pipeline de dados.
 
 Os dashboards foram construídos a partir das tabelas das camadas Silver e Gold, e representam artefatos centrais de consumo analítico do projeto.
 
 As imagens dos dashboards estão disponíveis no repositório, na pasta:
+[- dashboard.md](https://github.com/cpjost/MVP-PUC-RIO-1/tree/main/assets/dashboards)
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
