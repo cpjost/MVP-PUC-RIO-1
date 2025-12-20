@@ -23,7 +23,7 @@ Apoiar decisões analíticas e operacionais com base em dados
 
 O detalhamento completo do objetivo encontra-se em:
 
-objetivo_mvp.md
+[objetivo_mvp.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/objetivo_mvp.md)
 
 **Perguntas de Negócio**
 ---------------------------------------------------------------------------------------------------------------------------------------------
