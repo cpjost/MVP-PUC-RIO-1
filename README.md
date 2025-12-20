@@ -143,6 +143,23 @@ Abordagem exploratória, focada em segmentação de comportamento
 Sem objetivo preditivo operacional neste MVP
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+##  Código Utilizado no MVP
+
+Todo o código utilizado para ingestão, transformação, análise e geração
+dos dashboards foi desenvolvido no ambiente Databricks utilizando PySpark.
+
+O notebook completo exportado do Databricks está disponível no formato HTML:
+
+-  [Notebook Databricks – Pipeline Completo](notebooks/mvp-winfut-databricks-pipeline.html)
+
+O arquivo contém:
+- Ingestão dos dados (Camada Bronze)
+- Transformações e criação de features (Camada Silver)
+- Agregações analíticas (Camada Gold)
+- Aplicação de KMeans para identificação de regimes de mercado
+- Geração dos gráficos e dashboards apresentados no MVP
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 **Limitações**
 ---------------------------------------------------------------------------------------------------------------------------------------------
