@@ -167,6 +167,7 @@ Essa segmentação complementa as análises temporais e reforça o valor do pipe
 **Referência ao Código**
 
 A implementação completa desta análise encontra-se no notebook:
+https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb
 
 
 
