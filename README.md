@@ -91,7 +91,7 @@ Suporte à análise exploratória e estratégica
 
 A descrição detalhada das tabelas, colunas e tipos de dados está documentada em:
 
- catalogo_dados.md
+[ catalogo_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/catalogo_dados.md)
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
