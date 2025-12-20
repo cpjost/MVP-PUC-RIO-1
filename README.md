@@ -11,6 +11,7 @@ Etapas:
 5. Base para análises e dashboards
 
 Os resultados gerados aqui fundamentam as análises descritas nos arquivos:
+
 [- analise_resultados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_resultados.md)
 
 
