@@ -150,7 +150,7 @@ dos dashboards foi desenvolvido no ambiente Databricks utilizando PySpark.
 
 O notebook completo exportado do Databricks está disponível no formato HTML:
 
--  [Notebook Databricks – Pipeline Completo](notebooks/mvp-winfut-databricks-pipeline.html)
+file:///C:/Users/carlo/Downloads/notebooksmvp-winfut-databricks-pipeline.html
 
 O arquivo contém:
 - Ingestão dos dados (Camada Bronze)
