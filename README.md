@@ -158,6 +158,15 @@ Abordagem exploratória, focada em segmentação de comportamento
 
 Sem objetivo preditivo operacional neste MVP
 
+**Dashboards Analíticos**
+
+Como parte do MVP, foram desenvolvidos dashboards analíticos com o objetivo de visualizar, explorar e interpretar os resultados gerados ao longo do pipeline de dados.
+
+Os dashboards foram construídos a partir das tabelas das camadas Silver e Gold, e representam artefatos centrais de consumo analítico do projeto.
+
+As imagens dos dashboards estão disponíveis no repositório, na pasta:
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ##  Código Utilizado no MVP
 
