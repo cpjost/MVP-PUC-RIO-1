@@ -1,10 +1,10 @@
 ```mermaid
 flowchart LR
-    A[Fonte de Dados<br/>WINFUT - Dados Intraday<br/>(CSV / Histórico)] --> B
+    A[Fonte de Dados<br/>WINFUT - Dados Intraday<br/>CSV e Histórico] --> B
 
     B[Camada Bronze<br/>mvp_bronze<br/>• Ingestão<br/>• Tipagem<br/>• Timestamp] --> C
 
-    C[Camada Silver<br/>mvp_silver_fato_candle_regimes<br/>• Candles<br/>• Retorno<br/>• Range<br/>• Features<br/>• Cluster (KMeans)] --> D
+    C[Camada Silver<br/>mvp_silver_fato_candle_regimes<br/>• Candles<br/>• Retorno<br/>• Range<br/>• Features<br/>• Cluster KMeans] --> D
 
     D[Camada Gold<br/>Agregações Analíticas<br/>• Volatilidade<br/>• Retorno Médio<br/>• Tendência<br/>• Probabilidades] --> E
 
