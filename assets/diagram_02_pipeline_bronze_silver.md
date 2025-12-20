@@ -8,7 +8,8 @@ C[Silver - Tabela Fato<br/>mvp.silver_fato_candle_regimes<br/><br/>• Candle (O
 
 D[Silver - Features<br/><br/>• Seleção de variáveis<br/>• Montagem de vetor features<br/>• Normalização (se aplicada)<br/>• Validação de nulos/outliers] --> E
 
-E[Silver - Clustering<br/><br/>• Treino KMeans<br/>• prediction -> cluster<br/>• vol_categoria (ex: baixa/média/alta)<br/>• Persistência na fato] --> F
+E[Silver - Clustering<br/><br/>• Treino KMeans<br/>• prediction → cluster<br/>• vol_categoria (baixa/média/alta)<br/>• Persistência na tabela fato] --> F
 
-F[Saída para Camada Gold<br/><br/>• Agregações por hora/dia/timeframe<br/>• Métricas para dashboards] 
+F[Saída para Gold<br/><br/>• Agregações analíticas<br/>• Métricas por hora/dia/timeframe<br/>• Base para dashboards]
+
 
