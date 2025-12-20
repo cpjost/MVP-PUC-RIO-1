@@ -52,7 +52,7 @@ Gold – Agregações analíticas e consumo
 
 Diagramas detalhados da arquitetura e pipelines podem ser encontrados na pasta:
 
-assets/
+[assets/](https://github.com/cpjost/MVP-PUC-RIO-1/tree/main/assets)
 
 **Camadas do Pipeline**
 ---------------------------------------------------------------------------------------------------------------------------------------------
