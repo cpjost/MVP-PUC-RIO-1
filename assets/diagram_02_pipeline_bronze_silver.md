@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
 
 A[Fonte de Dados<br/>WINFUT - Dados Intraday<br/>CSV e Histórico] --> B
@@ -11,5 +12,5 @@ D[Silver - Features<br/><br/>• Seleção de variáveis<br/>• Montagem de vet
 E[Silver - Clustering<br/><br/>• Treino KMeans<br/>• prediction → cluster<br/>• vol_categoria (baixa/média/alta)<br/>• Persistência na tabela fato] --> F
 
 F[Saída para Gold<br/><br/>• Agregações analíticas<br/>• Métricas por hora/dia/timeframe<br/>• Base para dashboards]
-
+```
 
