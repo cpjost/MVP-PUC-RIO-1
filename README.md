@@ -14,6 +14,8 @@ Os resultados gerados aqui fundamentam as análises descritas nos arquivos:
 
 [- analise_resultados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_resultados.md)
 
+https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/-%20identifica%C3%A7%C3%A3o_de_clusters_de_candles.md
+
 
 **Visão Geral**
 ---------------------------------------------------------------------------------------------------------------------------------------------
