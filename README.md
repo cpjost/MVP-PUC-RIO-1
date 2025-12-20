@@ -1,7 +1,7 @@
 **WINFUT Intraday Quantitative Analysis — Historical Intraday Samples**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**Visão Geral:**
+**Visão Geral**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Este projeto consiste em um MVP (Minimum Viable Product) desenvolvido como requisito para a Pós-Graduação em Ciência de Dados da PUC-Rio, no módulo de Engenharia de Dados.
@@ -21,7 +21,7 @@ O projeto investiga padrões estatísticos e comportamentais do mercado intraday
 5. Padrões por timeframe e dia da semana
 
 
-**Objetivo do Projeto:**
+**Objetivo do Projeto**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **O Problema:**
@@ -43,29 +43,29 @@ O mercado intraday é caracterizado por alta volatilidade, não linearidade e co
 
 Este MVP resolve a falta de uma visão estatística estruturada do mercado intraday, substituindo percepções subjetivas por evidências quantitativas baseadas em dados.
 
-**Perguntas de Negócio:**
+**Perguntas de Negócio**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 O projeto busca responder às seguintes questões:
 
-**Tendência Intraday:**
+**Tendência Intraday**
 Quais horários apresentam maior volatilidade média ao longo do pregão?
 
-**Eficiência do Mercado:**
+**Eficiência do Mercado**
 Qual a probabilidade de um candle intraday fechar positivo?
 
-**Distribuição Estatística:**
+**Distribuição Estatística**
 Como os retornos intraday se distribuem?
 Eles apresentam simetria ou caudas longas (fat tails)?
 
-**Regimes de Volatilidade:**
+**Regimes de Volatilidade**
 O WINFUT se comporta de forma diferente em ambientes de baixa, média e alta volatilidade?
 
 **Padrões por Timeframe e Semana:**
 Existem diferenças significativas entre 5m, 15m e 60m?
 Os dias da semana influenciam no range médio?
 
-**Dados:**
+**Dados**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **Fonte**
@@ -86,7 +86,7 @@ Arquivos históricos de WINFUT provenientes de plataformas de mercado (profitcha
 CSV → Camada Bronze
 Delta Lake → Silver e Gold
 
-**Arquitetura do Pipeline:**
+**Arquitetura do Pipeline**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **Camada Bronze - Ingestão**
