@@ -199,7 +199,16 @@ Aumento de volatilidade em períodos de sobreposição com mercados externos
 Redução relativa em períodos intermediários do dia
 
 Arquivos:
+
 [- dashboard_01_volatilidade_intraday.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_volatilidade_intraday.png)
+
+[- dashboard_01_volatilidade_por_timeframe.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_volatilidade_por_timeframe_x_range.png)
+
+[- dashboard_01_heatmap_volatilidade](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_Heatmap_01_de_volatilidade.png)
+
+[- dashboard_01_volatilidade_semana_x_range](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_volatilidade_por_semana_x_range_medio.png)
+
+
 
 
 ##  Código Utilizado no MVP
