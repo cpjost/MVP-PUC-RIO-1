@@ -1,0 +1,72 @@
+# ===============================
+# Sistema Operacional
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.env
+.venv
+venv/
+
+# ===============================
+# Jupyter / Databricks
+# ===============================
+.ipynb_checkpoints/
+*.dbx
+.databricks/
+
+# ===============================
+# Logs e temporários
+# ===============================
+*.log
+logs/
+tmp/
+temp/
+
+# ===============================
+# Spark / Delta Lake
+# ===============================
+_metastore_db/
+spark-warehouse/
+derby.log
+delta/
+*.delta
+
+# ===============================
+# Dados grandes (não versionar)
+# ===============================
+data/bronze/*.csv
+data/silver/*
+data/gold/*
+
+# ===============================
+# Outputs locais de análise
+# ===============================
+outputs/
+results/
+*.parquet
+
+# ===============================
+# IDEs
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# Credenciais (NUNCA versionar)
+# ===============================
+*.key
+*.pem
+*.secret
+credentials/
