@@ -1,5 +1,18 @@
 **Análise Intraday do WINFUT com Pipeline Analítico e Clustering**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+Este notebook implementa o pipeline analítico do MVP apresentado no repositório
+MVP-PUC-RIO.
+
+Etapas:
+1. Ingestão de dados intraday (CSV)
+2. Camada Bronze – padronização
+3. Camada Silver – candles, métricas e features
+4. Clustering (KMeans)
+5. Base para análises e dashboards
+
+Os resultados gerados aqui fundamentam as análises descritas nos arquivos:
+- analise_resultados.md
+- identificação_de_clusters_de_candles.md
 
 **Visão Geral**
 ---------------------------------------------------------------------------------------------------------------------------------------------
