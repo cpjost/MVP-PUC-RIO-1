@@ -110,7 +110,7 @@ Análise e tratamento de outliers
 
 Os detalhes encontram-se em:
 
- analise_qualidade_dados.md
+[ analise_qualidade_dados.md](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_qualidade_dados.md)
  
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
