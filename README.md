@@ -168,6 +168,7 @@ Como parte do MVP, foram desenvolvidos dashboards analíticos com o objetivo de 
 Os dashboards foram construídos a partir das tabelas das camadas Silver e Gold, e representam artefatos centrais de consumo analítico do projeto.
 
 As imagens dos dashboards estão disponíveis no repositório, na pasta:
+
 [- dashboard.md](https://github.com/cpjost/MVP-PUC-RIO-1/tree/main/assets/dashboards)
 
 
@@ -179,7 +180,7 @@ dos dashboards foi desenvolvido no ambiente Databricks utilizando PySpark.
 
 O notebook completo exportado do Databricks está disponível no formato ipynb:
 
-[file:///C:/Users/carlo/Downloads/notebooksmvp-winfut-databricks-pipeline.html](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
+[- notebooksmvp](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
 
 O arquivo contém:
 - Ingestão dos dados (Camada Bronze)
