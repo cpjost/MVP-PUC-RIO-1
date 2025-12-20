@@ -221,3 +221,8 @@ A distribuição dos retornos apresenta caudas longas, indicando risco assimétr
 O algoritmo K-Means identificou três regimes claros de volatilidade.
 A probabilidade de retorno positivo não é uniforme ao longo do pregão.**
 
+
+## Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+
