@@ -24,7 +24,7 @@ O projeto investiga padrões estatísticos e comportamentais do mercado intraday
 **Objetivo do Projeto**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-**O Problema:**
+**O Problema**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 O mercado intraday é caracterizado por alta volatilidade, não linearidade e comportamento estocástico. Traders e analistas que utilizam apenas ferramentas gráficas tradicionais — como candlestick, Renko ou tape reading — enfrentam dificuldades para mensurar, de forma objetiva, padrões estatísticos relevantes, tais como:
