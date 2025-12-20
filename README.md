@@ -164,7 +164,7 @@ Sem objetivo preditivo operacional neste MVP
 Todo o código utilizado para ingestão, transformação, análise e geração
 dos dashboards foi desenvolvido no ambiente Databricks utilizando PySpark.
 
-O notebook completo exportado do Databricks está disponível no formato HTML:
+O notebook completo exportado do Databricks está disponível no formato ipynb:
 
 [file:///C:/Users/carlo/Downloads/notebooksmvp-winfut-databricks-pipeline.html](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
 
