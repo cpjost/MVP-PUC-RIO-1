@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     A[Fonte de Dados<br/>WINFUT - Dados Intraday<br/>(CSV / Histórico)] --> B
 
@@ -7,5 +8,5 @@ flowchart LR
 
     D[Camada Gold<br/>Agregações Analíticas<br/>• Volatilidade<br/>• Retorno Médio<br/>• Tendência<br/>• Probabilidades] --> E
 
-    E[Dashboards Analíticos<br/>• Dashboard 01 - Volatilidade<br/>• Dashboard 02 - Retornos<br/>• Dashboard 03 - Clusters]
-
+    E[Dashboards Analíticos<br/>• Dashboard 01 – Volatilidade<br/>• Dashboard 02 – Retornos<br/>• Dashboard 03 – Clusters]
+```
