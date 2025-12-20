@@ -12,3 +12,4 @@ D --> E[Predicao<br/>transform -> prediction<br/>prediction -> cluster]
 E --> F[Persistencia em Silver<br/>mvp.silver_fato_candle_regimes<br/>Adicionar colunas: cluster, vol_categoria]
 
 F --> G[Consumo Analitico<br/>Agregacoes para Gold<br/>Dashboards 03 - Clusters]
+```
