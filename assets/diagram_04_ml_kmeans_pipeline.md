@@ -1,4 +1,4 @@
-
+```mermaid
 flowchart LR
 
 A[Silver - Base de Candles<br/>mvp.silver_fato_candle_regimes<br/>OHLCV + retorno + range + timestamp] --> B[Preparacao de Features<br/>Selecao de variaveis<br/>Tratamento de nulos/outliers<br/>Padronizacao opcional]
