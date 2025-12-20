@@ -1,12 +1,14 @@
-**WINFUT Intraday Quantitative Analysis (2019–2025)**
+**WINFUT Intraday Quantitative Analysis — Historical Intraday Samples**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **Visão Geral:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-Este projeto é um MVP (Minimum Viable Product) desenvolvido como requisito para a pós-graduação em Ciência de Dados da PUC-Rio (Módulo: Engenharia de Dados).
+Este projeto consiste em um MVP (Minimum Viable Product) desenvolvido como requisito para a Pós-Graduação em Ciência de Dados da PUC-Rio, no módulo de Engenharia de Dados.
 
-O objetivo é construir um pipeline de dados completo (Coleta → Preparação → Modelagem → Carga → Análise) utilizando Databricks + PySpark + Delta Lake para analisar padrões intraday do contrato futuro do índice Ibovespa (WINFUT), incluindo:
+O objetivo é construir um pipeline de dados completo — desde a ingestão até a análise — utilizando Databricks, PySpark e Delta Lake, com foco na análise quantitativa intraday do contrato futuro do índice Ibovespa (WINFUT).
+
+O projeto investiga padrões estatísticos e comportamentais do mercado intraday, incluindo:
 
 1. Volatilidade intraday
 
@@ -14,7 +16,7 @@ O objetivo é construir um pipeline de dados completo (Coleta → Preparação �
 
 3. Probabilidade de retorno positivo por hora
 
-4. Regimes de volatilidade (K-Means)
+4. Regimes de volatilidade via K-Means
 
 5. Padrões por timeframe e dia da semana
 
@@ -25,37 +27,36 @@ O objetivo é construir um pipeline de dados completo (Coleta → Preparação �
 **O Problema:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-O mercado intraday é altamente volátil, não linear, e sensível a microvariações.
-Traders que observam apenas gráficos tradicionais (candlestick, renko, tape reading) não conseguem medir:
+O mercado intraday é caracterizado por alta volatilidade, não linearidade e comportamento estocástico. Traders e analistas que utilizam apenas ferramentas gráficas tradicionais — como candlestick, Renko ou tape reading — enfrentam dificuldades para mensurar, de forma objetiva, padrões estatísticos relevantes, tais como:
 
 1. Horários de maior volatilidade
 
-2. Períodos com maior probabilidade de retorno positivo
+2. Probabilidade de retornos positivos ao longo do pregão
 
-3. Distribuição estatística dos retornos
+3. Distribuição estatística dos retornos intraday
 
-4. Regimes de volatilidade intraday
+4. Mudanças de regime de volatilidade
 
-5. Comportamento por timeframe (5m, 15m, 60m)
+5. Diferenças comportamentais entre timeframes (5m, 15m, 60m)
 
-6. Padrões semanais
+6. Padrões semanais recorrentes
 
-O MVP resolve o problema de falta de visão estruturada e estatística, substituindo percepções subjetivas por informações quantitativas.
+Este MVP resolve a falta de uma visão estatística estruturada do mercado intraday, substituindo percepções subjetivas por evidências quantitativas baseadas em dados.
 
 **Perguntas de Negócio:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Perguntas de Negócio (Business Questions)
 
-O projeto busca responder:
+O projeto busca responder às seguintes questões:
 
 **Tendência Intraday:**
-Quais horários apresentam maior volatilidade média?
+Quais horários apresentam maior volatilidade média ao longo do pregão?
 
 **Eficiência do Mercado:**
-Qual a probabilidade de um candle fechar positivo ao longo do pregão?
+Qual a probabilidade de um candle intraday fechar positivo?
 
 **Distribuição Estatística:**
-Como os retornos intraday se distribuem? São simétricos? Possuem caudas longas?
+Como os retornos intraday se distribuem?
+Eles apresentam simetria ou caudas longas (fat tails)?
 
 **Regimes de Volatilidade:**
 O WINFUT se comporta de forma diferente em ambientes de baixa, média e alta volatilidade?
@@ -73,23 +74,24 @@ Arquivos históricos de WINFUT provenientes de plataformas de mercado (profitcha
 
 **Preço de abertura, máximo, mínimo e fechamento**
 
-**Volume**
+**Volume negociado**
 
-**Quantidade**
+**Quantidade de negócios**
 
-**Timestamp**
+**Timestamp do candle**
 
 **Formato**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-CSV → Bronze
-Delta → Silver e Gold
+CSV → Camada Bronze
+Delta Lake → Silver e Gold
 
 **Arquitetura do Pipeline:**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 **Camada Bronze - Ingestão**
 ---------------------------------------------------------------------------------------------------------------------------------------------
+Dados brutos ingeridos diretamente dos arquivos CSV, sem tratamento analítico.
 | Campo      | Tipo   | Descrição              |
 | ---------- | ------ | ---------------------- |
 | ativo      | string | WINFUT                 |
@@ -106,43 +108,43 @@ Delta → Silver e Gold
 
 **Camada Silver - Trasformação**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Transformações aplicadas:
+Aplicação de limpeza, padronização e criação de features básicas:
 
-1. Conversão numérica de preços
+1. Conversão numérica de preços e volumes.
 
-2. Padronização de tipos
+2. Padronização de tipos de dados
 
 3. Criação de timestamp unificado
 
-4. Criação de range = max - min
+4. Cálculo de range = maximo − minimo
 
-5. Criação de retorno = (fechamento - abertura) / abertura
+5. Cálculo de retorno = (fechamento − abertura) / abertura
 
-6. Criação de hora_num e dia_semana
+6. Extração de hora e dia_semana
 
-7. Limpeza e normalização
+7. Tratamento de valores inconsistentes
 
 
 
 **Camada Gold - Análises e Features**
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Indicadores derivados:
+Camada analítica com agregações e métricas derivadas.
 
 **Volatilidade**
 
-1. Range_medio_por_hora
+1. Range médio por hora
 
-2. Range_medio_por_timeframe
+2. Range médio por timeframe
 
-3. Range_medio_por_dia_semana
+3. Range médio por dia da semana
 
 **Retorno**
 
-1. Prob_retorno_positivo
+1. Probabilidade de retorno positivo
 
-2. Retorno_medio_por_hora
+2. Retorno médio por hora
 
-3. Retorno_medio_por_timeframe
+3. Retorno médio por timeframe
 
 **Regimes de Mercado**
 
@@ -154,7 +156,7 @@ K-Means aplicado sobre:
 
 3. Volatilidade média
 
-Regimes resultantes:
+Regimes identificados:
 
 **Cluster 0 – Baixa volatilidade**
 
@@ -215,7 +217,7 @@ Regimes resultantes:
 ---------------------------------------------------------------------------------------------------------------------------------------------
 **O mercado WINFUT possui padrões intraday bem definidos.
 Período da manhã concentra maior volatilidade.
-Distribuição dos retornos apresenta caudas longas.
-K-Means revelou três regimes claros de volatilidade.
-Probabilidade de retorno positivo não é uniforme ao longo do dia.**
+A distribuição dos retornos apresenta caudas longas, indicando risco assimétrico.
+O algoritmo K-Means identificou três regimes claros de volatilidade.
+A probabilidade de retorno positivo não é uniforme ao longo do pregão.**
 
