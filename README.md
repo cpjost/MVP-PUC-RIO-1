@@ -173,6 +173,34 @@ As imagens dos dashboards estão disponíveis no repositório, na pasta:
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+**Dashboard 01 – Análise de Volatilidade Intraday**
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Objetivo:
+Analisar o comportamento da volatilidade do WINFUT ao longo do pregão, considerando diferentes faixas de horário e timeframes.
+
+Principais visualizações:
+
+Volatilidade média por horário
+
+Distribuição intraday de volatilidade
+
+Comparação de volatilidade por timeframe
+
+Heatmaps de concentração de volatilidade
+
+Insights obtidos:
+
+Maior volatilidade concentrada na abertura do pregão
+
+Aumento de volatilidade em períodos de sobreposição com mercados externos
+
+Redução relativa em períodos intermediários do dia
+
+Arquivos:
+
+
 ##  Código Utilizado no MVP
 
 Todo o código utilizado para ingestão, transformação, análise e geração
