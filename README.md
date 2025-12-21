@@ -276,9 +276,9 @@ Regimes estáveis associados a menor dispersão de retornos
 
 Arquivos:
 
-[- dashboard_03_distribuicao_candles_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_distribuicao_candles_por_cluster.png)
+[- dashboard_03_distribuicao_candles_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_distribuicao_candles_por_cluster.png.png)
 
-[dashboard_03_volatilidade_media_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_volatilidade_media_por_cluster.png)
+[dashboard_03_volatilidade_media_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_volatilidade_media_por_cluster.png.png)
 
 
 
