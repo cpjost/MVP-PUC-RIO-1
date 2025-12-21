@@ -20,5 +20,5 @@ pois são armazenados e processados diretamente no ambiente de dados em nuvem
 Toda a lógica de ingestão, transformação e modelagem pode ser reproduzida
 a partir do notebook disponível em:
 
-src/notebooks/mvp-winfut-databricks-pipeline.ipynb
+[ -src/notebooks/mvp-winfut-databricks-pipeline.ipynb](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
 
