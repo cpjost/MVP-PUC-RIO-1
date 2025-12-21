@@ -253,9 +253,32 @@ Arquivos:
 **Dashboard 03 – Clusters e Regimes de Mercado**
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+Objetivo:
+Visualizar os regimes de mercado identificados pelo modelo de clustering (KMeans), relacionando clusters com volatilidade e retorno.
 
+Principais visualizações:
 
+Distribuição de candles por cluster
 
+Volatilidade média por cluster
+
+Retorno médio por cluster
+
+Frequência relativa dos regimes
+
+Insights obtidos:
+
+Identificação clara de regimes de baixa, média e alta volatilidade
+
+Regimes de maior risco associados a maior potencial de retorno
+
+Regimes estáveis associados a menor dispersão de retornos
+
+Arquivos:
+
+[- dashboard_03_distribuicao_candles_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_distribuicao_candles_por_cluster.png)
+
+[dashboard_03_volatilidade_media_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_volatilidade_media_por_cluster.png)
 
 
 
