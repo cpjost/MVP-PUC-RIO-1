@@ -307,13 +307,7 @@ Todos os dashboards foram gerados a partir dos dados processados no pipeline des
 [notebook_mvp-winfut-databricks-pipeline](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
 
 
-
-
-
-
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ##  Código Utilizado no MVP
@@ -333,6 +327,28 @@ O arquivo contém:
 - Geração dos gráficos e dashboards apresentados no MVP
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+## Gestão e Armazenamento dos Dados
+
+Este projeto utiliza dados intraday do contrato futuro de índice (WINFUT),
+processados em ambiente de dados em nuvem (Databricks).
+
+Os dados brutos, intermediários e analíticos **não são versionados diretamente
+neste repositório**, pois são armazenados e processados em volumes do Databricks
+(DBFS), seguindo boas práticas de engenharia de dados.
+
+A reprodutibilidade do MVP é garantida por meio do versionamento completo
+dos notebooks, scripts e pipelines analíticos disponíveis na pasta `src/`.
+
+Para mais detalhes sobre a estrutura dos dados, consulte:
+
+[catalogo_dados](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/catalogo_dados.md)
+
+[analise_qualidade_dados](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/analise_qualidade_dados.md)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 **Limitações**
 ---------------------------------------------------------------------------------------------------------------------------------------------
