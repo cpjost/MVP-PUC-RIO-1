@@ -278,7 +278,33 @@ Arquivos:
 
 [- dashboard_03_distribuicao_candles_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_distribuicao_candles_por_cluster.png.png)
 
-[dashboard_03_volatilidade_media_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_volatilidade_media_por_cluster.png.png)
+[- dashboard_03_volatilidade_media_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_volatilidade_media_por_cluster.png.png)
+
+[dashboard_03_retorno_medio_por_cluster](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_03_retorno_medio_por_cluster.png.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+**Papel dos Dashboards no MVP**
+
+Os dashboards desempenham papel fundamental no MVP, pois:
+
+Traduzem resultados analíticos em visualizações interpretáveis
+
+Permitem validação visual dos padrões identificados
+
+Servem como interface de consumo para análises exploratórias
+
+Conectam diretamente os resultados técnicos às perguntas de negócio
+
+Esses artefatos complementam os notebooks de processamento e modelagem, formando uma solução analítica completa.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+**Referência ao Código e Pipeline**
+
+Todos os dashboards foram gerados a partir dos dados processados no pipeline descrito neste repositório, cuja implementação está disponível em:
+
+[notebook_mvp-winfut-databricks-pipeline](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/src/notebooksmvp-winfut-databricks-pipeline.ipynb)
 
 
 
