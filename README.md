@@ -178,6 +178,7 @@ As imagens dos dashboards estão disponíveis no repositório, na pasta:
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Objetivo:
+
 Analisar o comportamento da volatilidade do WINFUT ao longo do pregão, considerando diferentes faixas de horário e timeframes.
 
 Principais visualizações:
@@ -207,6 +208,61 @@ Arquivos:
 [- dashboard_01_heatmap_volatilidade](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_Heatmap_01_de_volatilidade.png)
 
 [- dashboard_01_volatilidade_semana_x_range](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_01_volatilidade_por_semana_x_range_medio.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+**Dashboard 02 – Retorno e Tendência por Faixa de Horário**
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Objetivo:
+
+Avaliar o comportamento do retorno médio e a tendência dos candles ao longo do dia.
+
+Principais visualizações:
+
+Retorno médio por faixa de horário
+
+Boxplots de distribuição de retornos
+
+Probabilidade de retorno positivo por horário
+
+Heatmaps de tendência intraday
+
+Insights obtidos:
+
+Retorno médio não uniforme ao longo do dia
+
+Algumas faixas horárias apresentam maior consistência de retorno
+
+Evidência de assimetria positiva em horários específicos
+
+Arquivos:
+
+[- dashboard_02_Boxplot_retorno](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_02_Boxplox_de_retornos.png)
+
+[- dashboard_02_probabilidade_retorno_positivo](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_02_probabilidade_retorno_positivo_por_hora.png)
+
+[- dashboard_02_retorno_medio_por_hora](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_02__Retorno_medio_por_time_frame.png)
+
+[- dashboard_02_tendencia_por_hora](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_02_tendencia_por_hora.png)
+
+[- dashboard_02_tendencia_por_hora_x_timeframe](https://github.com/cpjost/MVP-PUC-RIO-1/blob/main/assets/dashboards/dashboard_02_Heatmap_02_tendencia_por_hora_x_timeframe.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+**Dashboard 03 – Clusters e Regimes de Mercado**
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 
